@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherScope | Global Weather Analyser</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+    <header>
+        <div class="logo">
+            <span>☁</span> Weather<span class="blue">Scope</span>
+        </div>
+        <div class="header-right">
+            <span class="live"><span></span> LIVE WEATHER</span>
+            <button id="unitBtn">°C / °F</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="eyebrow">GLOBAL WEATHER INTELLIGENCE</p>
+            <h1>Explore the weather.<br><span>Understand the world.</span></h1>
+            <p class="subtitle">Real-time weather data and intelligent climate insights from anywhere on Earth.</p>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input id="cityInput" type="text" placeholder="Search any city in the world..." autocomplete="off">
+                <button id="searchBtn">Analyse Weather ↗</button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+
+            <p class="popular">EXPLORE: 
+                <button class="city-btn" data-city="Tokyo">Tokyo</button>
+                <button class="city-btn" data-city="London">London</button>
+                <button class="city-btn" data-city="New York">New York</button>
+                <button class="city-btn" data-city="Dubai">Dubai</button>
+            </p>
+        </section>
+
+        <div id="loading" class="loading hidden">Analysing atmospheric conditions...</div>
+        <div id="error" class="error hidden"></div>
+
+        <section id="dashboard" class="hidden">
+
+            <div class="location-heading">
+                <div>
+                    <p class="eyebrow">CURRENT CONDITIONS</p>
+                    <h2 id="location">--</h2>
+                    <p id="localTime">Local time: --</p>
+                </div>
+                <div class="updated">● LIVE DATA</div>
+            </div>
+
+            <div class="weather-main">
+                <div class="current-weather">
+                    <div class="weather-icon" id="weatherIcon">☀️</div>
+                    <div>
+                        <div class="temperature"><span id="temperature">--</span><sup id="degree">°C</sup></div>
+                        <p id="condition">--</p>
+                        <p class="feels">Feels like <span id="feels">--</span>°</p>
+                    </div>
+                </div>
+
+                <div class="weather-description">
+                    <p class="eyebrow">WEATHER OVERVIEW</p>
+                    <h3 id="overview">Waiting for weather data...</h3>
+                    <p id="analysis">Search for a city to generate an intelligent weather analysis.</p>
+                </div>
+            </div>
+
+            <h3 class="section-title">Atmospheric Metrics</h3>
+            <div class="metrics">
+                <div class="metric">
+                    <span>💧</span>
+                    <p>Humidity</p>
+                    <h2 id="humidity">--%</h2>
+                    <small>Relative humidity</small>
+                </div>
+                <div class="metric">
+                    <span>🌬️</span>
+                    <p>Wind Speed</p>
+                    <h2 id="wind">--</h2>
+                    <small>km/h</small>
+                </div>
+                <div class="metric">
+                    <span>🌡️</span>
+                    <p>Pressure</p>
+                    <h2 id="pressure">--</h2>
+                    <small>hPa</small>
+                </div>
+                <div class="metric">
+                    <span>☔</span>
+                    <p>Precipitation</p>
+                    <h2 id="rain">--</h2>
+                    <small>Current precipitation (mm)</small>
+                </div>
+                <div class="metric">
+                    <span>☀️</span>
+                    <p>UV Index</p>
+                    <h2 id="uv">--</h2>
+                    <small>Daily maximum</small>
+                </div>
+                <div class="metric">
+                    <span>🌫️</span>
+                    <p>Air Quality</p>
+                    <h2 id="aqi">--</h2>
+                    <small id="aqiLabel">US AQI</small>
+                </div>
+            </div>
+
+            <h3 class="section-title">24-Hour Temperature Forecast</h3>
+            <div id="hourly" class="hourly"></div>
+
+            <h3 class="section-title">7-Day Weather Forecast</h3>
+            <div id="forecast" class="forecast"></div>
+
+            <h3 class="section-title">Environmental Intelligence</h3>
+            <div class="insights">
+                <div class="insight">
+                    <span>🌅</span>
+                    <div><p>Sunrise</p><h3 id="sunrise">--</h3></div>
+                </div>
+                <div class="insight">
+                    <span>🌇</span>
+                    <div><p>Sunset</p><h3 id="sunset">--</h3></div>
+                </div>
+                <div class="insight">
+                    <span>🧠</span>
+                    <div><p>Outdoor Activity</p><h3 id="outdoor">--</h3></div>
+                </div>
+                <div class="insight">
+                    <span>🛡️</span>
+                    <div><p>Weather Alert</p><h3 id="alert">--</h3></div>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                WeatherScope · Global Atmospheric Intelligence · Data by Open-Meteo
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
